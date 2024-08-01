@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Animate Position Change</title>
+        <style>
+            .container {
+                position: relative;
+                width: 500px;
+                height: 300px;
+                border: 1px solid black;
+                overflow: hidden;
+            }
+
+            .element {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                transition: all 1s ease;
+            }
+
+            .relative {
+                top: 0;
+                left: 0;
+            }
+
+            .absolute {
+                top: 200px;
+                left: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="element relative" id="element"></div>
+        </div>
+        <button onclick="togglePosition()">Toggle Position</button>
+
+        <script>
+            const input = document.querySelector('input[type="range"]');
+const handle = document.querySelector('.handle');
+
+function handleUpdate(){
+	var suffix = this.dataset.sizing || '';
+	document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+	checkFlipAngle(this.value);
+}
+
+input.addEventListener('mousemove', handleUpdate);
+function init(){
+	document.documentElement.style.setProperty('--rotation-angle', '180deg');
+	checkFlipAngle(parseInt(document.documentElement.style.getPropertyValue('--rotation-angle')));
+}
+
+function checkFlipAngle(value){
+	if(value > 90){
+		handle.classList.add('hidden');
+	} else {
+		handle.classList.remove('hidden');
+	}
+}
+init();
+        </script>
+    </body>
+</html>

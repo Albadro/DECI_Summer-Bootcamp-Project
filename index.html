@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>KERSHLESS</title>
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/kershless.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <h2>Refregerator lock prototype</h2>
+            <input
+                type="range"
+                name="rotation-angle"
+                min="0"
+                max="180"
+                data-sizing="deg"
+                value="180"
+            />
+            <div class="fridge">
+                <div class="back-wall"></div>
+                <div class="shelf one">
+                    <div class="box"></div>
+                    <div class="tray"></div>
+                </div>
+                <div class="shelf two">
+                    <div id="kershless" class="kershless">
+                        <a
+                            href="https://wokwi.com/projects/404911776309735425"
+                            target="_blank"
+                            class="lock"
+                        ></a>
+                        <div class="left">
+                            <div class="slice s1"></div>
+                            <div class="slice s2"></div>
+                            <div class="slice s3"></div>
+                            <div class="slice s4"></div>
+                            <div class="slice s5"></div>
+                            <div class="slice s6"></div>
+                            <div class="slice s7"></div>
+                        </div>
+                        <div class="right">
+                            <div class="slice s1"></div>
+                            <div class="slice s2"></div>
+                            <div class="slice s3"></div>
+                            <div class="slice s4"></div>
+                            <div class="slice s5"></div>
+                            <div class="slice s6"></div>
+                            <div class="slice s7"></div>
+                        </div>
+                    </div>
+                    <div class="green-bowl"></div>
+                    <div class="cake">
+                        <div class="stripe"></div>
+                        <div class="stripe"></div>
+                    </div>
+                </div>
+                <div class="shelf three">
+                    <div class="watermelon">
+                        <div class="seed"></div>
+                        <div class="seed"></div>
+                        <div class="seed"></div>
+                        <div class="seed"></div>
+                        <div class="seed"></div>
+                        <div class="seed"></div>
+                        <div class="seed"></div>
+                    </div>
+                    <div class="potato"></div>
+                    <div class="potato"></div>
+                    <div class="potato"></div>
+                    <div class="potato"></div>
+                    <div class="potato"></div>
+                    <div class="potato"></div>
+                </div>
+                <div class="door">
+                    <div class="handle"></div>
+                </div>
+            </div>
+        </div>
+        <form class="meal-form" id="meal-form">
+            <label for="breakfast-time">Breakfast Time:</label>
+            <input
+                type="time"
+                id="breakfast-time"
+                name="breakfast-time"
+                required
+            />
+            <br />
+            <label for="lunch-time">Lunch Time:</label>
+            <input type="time" id="lunch-time" name="lunch-time" required />
+            <br />
+            <label for="dinner-time">Dinner Time:</label>
+            <input type="time" id="dinner-time" name="dinner-time" required />
+            <br />
+            <button type="submit">Submit</button>
+        </form>
+        <footer>
+            <p>KERSHLESS Team | for a better Henry 😃</p>
+        </footer>
+        <script src="js/main.js"></script>
+        <script src="js/kershless.js"></script>
+    </body>
+</html>

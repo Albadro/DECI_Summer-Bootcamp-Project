@@ -1,0 +1,144 @@
+html {
+    overflow: hidden;
+}
+
+.shelf.two {
+    position: relative;
+}
+.shelf.two > .kershless {
+    --brdr-clr: rgb(180, 180, 180);
+    --brdr-width: 5px;
+    --clr: rgba(0, 89, 255, 0.5);
+    border: solid var(--brdr-width) var(--brdr-clr);
+    z-index: 100;
+    position: absolute;
+    bottom: 100%;
+    width: 100%;
+    height: 58px;
+    display: flex;
+}
+.kershless > .lock {
+    --led-clr: red;
+    content: "";
+    width: 30px;
+    height: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--brdr-clr);
+    z-index: 1000;
+    &::before {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 500%;
+        background-color: var(--led-clr);
+        position: absolute;
+        z-index: 10000;
+        top: 40%;
+        transform: translateY(-50%);
+        left: 15%;
+        box-shadow: 2px 2px 5px 1px var(--led-clr);
+    }
+}
+.kershless.allowed > .lock {
+    --led-clr: rgb(0, 128, 85);
+}
+/* left & right */
+.kershless > * {
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+.kershless .right {
+    direction: rtl;
+}
+/* door slices */
+.kershless .slice {
+    --slc-width: calc(100% / 7);
+    background-color: var(--clr);
+    width: var(--slc-width);
+    height: 100%;
+    transition-property: inset;
+    transition-duration: 650ms;
+    transition-timing-function: linear;
+    position: absolute;
+}
+.slice:not(:first-child) {
+    border-inline-start: solid 1px var(--clr);
+}
+.slice:last-child {
+    border-inline-end: solid 1px var(--clr);
+}
+/* closed state position */
+.s2 {
+    inset-inline-start: calc(var(--slc-width));
+}
+.s3 {
+    inset-inline-start: calc(var(--slc-width) * 2);
+}
+.s4 {
+    inset-inline-start: calc(var(--slc-width) * 3);
+}
+.s5 {
+    inset-inline-start: calc(var(--slc-width) * 4);
+}
+.s6 {
+    inset-inline-start: calc(var(--slc-width) * 5);
+}
+.s7 {
+    inset-inline-start: calc(var(--slc-width) * 6);
+}
+/* openned state position */
+.kershless.open .slice {
+    inset-inline-start: 0;
+}
+footer {
+    margin-inline: auto;
+    max-width: max-content;
+    margin-top: 70px;
+}
+
+/*  */
+/* form (Hazem code with my edits) */
+.meal-form {
+    margin-top: 70px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    max-width: 90%;
+    margin-inline: 5%;
+}
+.meal-form > * {
+    min-width: max-content;
+    margin-inline: 1em;
+}
+
+.meal-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+    color: black;
+}
+
+.meal-form input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #062341;
+    border-radius: 5px;
+}
+
+.meal-form button {
+    background-color: #062341;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.meal-form button:hover {
+    background-color: #074564;
+}
